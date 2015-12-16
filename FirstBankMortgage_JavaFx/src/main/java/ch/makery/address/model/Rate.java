@@ -5,8 +5,7 @@ import domain.RateDomainModel;
 public class Rate extends RateDomainModel {
 	
 	public double getPayment(int NumberOfPayments)
-	{
-		//FinalExam
+	{		//FinalExam
 		//	Normally this kind of method would be in a BLL, but alas...
 		
 		//	Figure out payment based on:
