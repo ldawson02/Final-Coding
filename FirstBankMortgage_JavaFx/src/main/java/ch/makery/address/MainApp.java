@@ -44,11 +44,10 @@ public class MainApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("FirstBankMortgage");
+        this.primaryStage.setTitle("House Mortgage Calculator");
         
         // Set the application icon.
-        this.primaryStage.getIcons().add(new Image("file:resources/images/address_book_32.png"));
-
+        this.primaryStage.getIcons().add(new Image("file:resources/images/house.png"));
         initRootLayout();
 
         showMortgageOverview();
@@ -88,11 +87,11 @@ public class MainApp extends Application {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("view/MortgageOverview.fxml"));
-            AnchorPane mortgageOverview = (AnchorPane) loader.load();
+            loader.setLocation(MainApp.class.getResource("view/Mortgage.fxml"));
+            AnchorPane mortgage = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
-            rootLayout.setCenter(mortgageOverview);
+            rootLayout.setCenter(mortgage);
 
             // Give the controller access to the main app.
             MortgageController controller = loader.getController();
@@ -101,7 +100,7 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    } 
     
 
 

@@ -20,7 +20,7 @@ public class RootLayoutController {
 
     @FXML
     private void handleExit() {
-        System.exit(0);
+        System.exit(0);;
     }
     
 

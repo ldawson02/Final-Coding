@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.media.*?>
 <?import javafx.scene.canvas.*?>
 <?import javafx.scene.*?>
 <?import javafx.geometry.*?>
@@ -10,15 +12,15 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="519.0" prefWidth="450.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MortgageController">
+<AnchorPane prefHeight="600.0" prefWidth="450.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.40" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ch.makery.address.view.MortgageController">
    <children>
-      <Pane layoutY="14.0" prefHeight="519.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutY="-57.0" prefHeight="576.0" prefWidth="450.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <VBox layoutX="29.0" layoutY="83.0" prefHeight="340.0" prefWidth="381.0">
+            <VBox layoutX="35.0" layoutY="95.0" prefHeight="420.0" prefWidth="381.0">
                <children>
                   <HBox prefHeight="70.0" prefWidth="358.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="194.0" styleClass="label-bright" text="Yearly Income" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="194.0" styleClass="label-bright" text="Annual Income" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
                            <effect>
                               <Blend />
                            </effect>
@@ -26,7 +28,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtIncome" prefHeight="15.0" prefWidth="162.0">
+                        <TextField fx:id="txtIncome" prefHeight="22.0" prefWidth="162.0">
                            <HBox.margin>
                               <Insets top="15.0" />
                            </HBox.margin>
@@ -43,7 +45,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtIncome1" prefHeight="15.0" prefWidth="162.0">
+                        <TextField fx:id="txtExpenses" prefHeight="15.0" prefWidth="162.0">
                            <HBox.margin>
                               <Insets top="15.0" />
                            </HBox.margin>
@@ -60,7 +62,7 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtIncome2" prefHeight="15.0" prefWidth="162.0">
+                        <TextField fx:id="txtCreditScore" prefHeight="15.0" prefWidth="162.0">
                            <HBox.margin>
                               <Insets top="15.0" />
                            </HBox.margin>
@@ -69,7 +71,7 @@
                   </HBox>
                   <HBox prefHeight="70.0" prefWidth="200.0">
                      <children>
-                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="194.0" styleClass="label-bright" text="Yearly Income" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="194.0" styleClass="label-bright" text="House Cost" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
                            <effect>
                               <Blend />
                            </effect>
@@ -77,20 +79,49 @@
                               <Font size="20.0" />
                            </font>
                         </Label>
-                        <TextField fx:id="txtIncome3" prefHeight="15.0" prefWidth="162.0">
+                        <TextField fx:id="txtHouseCost" prefHeight="15.0" prefWidth="162.0">
                            <HBox.margin>
                               <Insets top="15.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox prefHeight="70.0" prefWidth="200.0">
+                  <HBox layoutX="10.0" layoutY="220.0" prefHeight="70.0" prefWidth="200.0">
                      <children>
-                        <Button mnemonicParsing="false" text="Button" />
+                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="74.0" prefWidth="194.0" styleClass="label-bright" text="Payment Period" textAlignment="CENTER" textOverrun="WORD_ELLIPSIS">
+                           <effect>
+                              <Blend />
+                           </effect>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="cmbTerm" prefHeight="27.0" prefWidth="164.0" styleClass="label-bright" visibleRowCount="2">
+                           <HBox.margin>
+                              <Insets top="20.0" />
+                           </HBox.margin>
+                           <effect>
+                              <Bloom threshold="1.0" />
+                           </effect>
+                        </ComboBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="290.0" prefHeight="70.0" prefWidth="200.0">
+                     <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#handleCalculate" onMouseClicked="#handleCalculate" prefHeight="38.0" prefWidth="124.0" text="Calculate">
+                           <HBox.margin>
+                              <Insets left="130.0" top="15.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
                   </HBox>
                </children>
             </VBox>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="20.0" layoutY="6.0" prefHeight="70.0" prefWidth="411.0" styleClass="label-header" text="Mortgage Calculator" textAlignment="CENTER" textFill="#145ecd" textOverrun="CLIP">
+               <effect>
+                  <Reflection topOffset="-10.0" />
+               </effect></Label>
+            <Label fx:id="MortgagePaymentLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="76.0" layoutY="510.0" prefHeight="57.0" prefWidth="300.0" styleClass="label-bright" textAlignment="CENTER" />
          </children>
       </Pane>
    </children>
